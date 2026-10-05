@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TestHub - Main Menu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+  <div class="auth-layout">
+
+    <!-- =========================================
+    LEFT BRAND PANEL
+    ========================================= -->
+    <section class="auth-hero">
+      <div class="auth-hero-top">
+        <div class="hero-logo">T</div>
+        <div class="hero-brand">Test<span>Hub</span></div>
+      </div>
+
+      <div class="hero-copy">
+        <span class="hero-kicker">WELCOME TO TESTHUB</span>
+        <h1>Prepare.<br>Practice.<br><span>Achieve.</span></h1>
+        <p>Your simple online space for exams, progress tracking, and learning with confidence.</p>
+      </div>
+
+      <div class="hero-curve"></div>
+
+      <div class="hero-footer">© 2026 TestHub</div>
+    </section>
+
+    <!-- =========================================
+    RIGHT LOGIN PANEL
+    ========================================= -->
+    <main class="auth-form-panel">
+      <div class="auth-form-wrap">
+
+        <!-- =====================================
+        LOGIN VIEW
+        ===================================== -->
+        <div id="loginView">
+          <span class="auth-kicker">ACCOUNT ACCESS</span>
+          <h2>Welcome back!</h2>
+          <p class="auth-subtitle">Log in to continue to your TestHub account.</p>
+
+          <form id="loginForm">
+            <!-- ACCOUNT TYPE -->
+            <div class="role-label">ACCOUNT TYPE</div>
+
+            <div class="role-switch">
+              <label class="role-option active" id="studentRoleOption">
+                <input id="studentRole" type="radio" name="loginRoleRadio" value="student" checked>
+                <span class="radio-dot"></span>
+                Student
+              </label>
+
+              <label class="role-option" id="teacherRoleOption">
+                <input id="teacherRole" type="radio" name="loginRoleRadio" value="teacher">
+                <span class="radio-dot"></span>
+                Teacher
+              </label>
+            </div>
+
+            <!-- USERNAME -->
+            <div class="auth-field">
+              <label for="loginUsername">Username</label>
+              <input id="loginUsername" type="text" placeholder="Enter your username" autocomplete="username" required>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="auth-field password-field">
+              <label for="loginPassword">Password</label>
+              <div class="password-wrap">
+                <input id="loginPassword" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+                <button type="button" class="show-password" id="loginShowPassword">Show</button>
+              </div>
+            </div>
+
+            <!-- LOGIN BUTTON -->
+            <button class="login-button" type="submit" id="loginButton">
+              <span>Log In</span>
+              <span class="arrow">→</span>
+            </button>
+          </form>
+
+          <p class="account-switch">
+            No account yet?
+            <button type="button" class="text-btn" id="showRegister">Create one</button>
+          </p>
+        </div>
+
+        <!-- =====================================
+        REGISTER VIEW
+        ===================================== -->
+        <div id="registerView" class="hidden">
+          <span class="auth-kicker">GET STARTED</span>
+          <h2>Create your account</h2>
+          <p class="auth-subtitle">Choose your account type and create your TestHub login.</p>
+
+          <form id="registerForm">
+            <!-- ACCOUNT TYPE -->
+            <div class="role-label">ACCOUNT TYPE</div>
+
+            <div class="role-switch">
+              <label class="role-option active" id="registerStudentRoleOption">
+                <input id="registerStudentRole" type="radio" name="registerRoleRadio" value="student" checked>
+                <span class="radio-dot"></span>
+                Student
+              </label>
+
+              <label class="role-option" id="registerTeacherRoleOption">
+                <input id="registerTeacherRole" type="radio" name="registerRoleRadio" value="teacher">
+                <span class="radio-dot"></span>
+                Teacher
+              </label>
+            </div>
+
+            <!-- USERNAME -->
+            <div class="auth-field">
+              <label for="registerUsername">Username</label>
+              <input id="registerUsername" type="text" placeholder="Create a username" autocomplete="username" required>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="auth-field password-field">
+              <label for="registerPassword">Password</label>
+              <div class="password-wrap">
+                <input id="registerPassword" type="password" minlength="4" placeholder="Create a password" autocomplete="new-password" required>
+                <button type="button" class="show-password" id="registerShowPassword">Show</button>
+              </div>
+            </div>
+
+            <!-- REGISTER BUTTON -->
+            <button class="login-button" type="submit">
+              <span>Create Account</span>
+              <span class="arrow">→</span>
+            </button>
+          </form>
+
+          <p class="account-switch">
+            Already have an account?
+            <button type="button" class="text-btn" id="showLogin">Log in</button>
+          </p>
+        </div>
+
+        <!-- MESSAGE -->
+        <p id="authMessage" class="message"></p>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- =========================================
+  YOUR MAIN APP JAVASCRIPT
+  ========================================= -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>

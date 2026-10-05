@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+<title>TestHub - Results</title>
+<link
+rel="stylesheet"
+href="css/style.css"
+>
+</head>
+
+<body>
+<div class="app-shell">
+
+<!-- =====================================================
+SIDEBAR
+====================================================== -->
+<aside class="sidebar">
+<div class="sidebar-brand">
+<div class="brand-mark">
+T
+</div>
+<span>
+Test<span class="brand-blue">Hub</span>
+</span>
+
+</div>
+
+<nav>
+<a
+href="dashboard.html"
+class="nav-link"
+>
+<span>⌂</span>
+Dashboard
+</a>
+
+<a
+href="exams.html"
+class="nav-link"
+>
+<span>□</span>
+Exams
+</a>
+
+<a
+href="results.html"
+class="nav-link active"
+>
+<span>◇</span>
+Results
+</a>
+
+<a
+href="profile.html"
+class="nav-link"
+>
+<span>•</span>
+Profile
+</a>
+</nav>
+
+<button
+class="logout-btn"
+data-logout
+>
+<span>↪</span>
+Log Out
+</button>
+</aside>
+
+<!-- =====================================================
+MAIN
+====================================================== -->
+<main class="main-content">
+
+<!-- PAGE HEADER -->
+<header class="topbar">
+<div>
+<span
+class="eyebrow"
+id="resultsEyebrow"
+>
+RESULTS & RESPONSES
+</span>
+
+<h1 id="resultsPageTitle">
+Student Responses
+</h1>
+
+<p
+id="resultsPageSubtitle"
+class="page-subtitle"
+>
+Review student answers and release their scores.
+
+</p>
+</div>
+
+<div class="user-summary">
+<span class="online-dot"></span>
+<div>
+<strong id="headerRole">
+Teacher
+</strong>
+<small>
+Account
+</small>
+</div>
+<img
+id="topAvatar"
+class="avatar"
+src=""
+alt="Profile"
+>
+</div>
+</header>
+
+<!-- =====================================================
+TEACHER RESULTS
+====================================================== -->
+<section
+id="teacherResults"
+class="results-main-card card"
+>
+
+<div class="results-header">
+<div>
+<span class="eyebrow">
+TEACHER PORTAL
+</span>
+<h2>
+Exam Responses
+</h2>
+<p class="muted">
+Choose an exam to view the students who
+submitted their answers.
+</p>
+</div>
+</div>
+
+<!-- JavaScript creates exam cards here -->
+<div
+id="teacherResultList"
+class="teacher-result-list"
+></div>
+</section>
+
+<!-- =====================================================
+STUDENT RESULTS
+====================================================== -->
+<section
+id="studentResults"
+class="results-main-card card hidden"
+>
+<div class="results-header">
+
+<div>
+<span class="eyebrow">
+EXAM HISTORY
+</span>
+<h2>
+My Results
+</h2>
+<p class="muted">
+View your released exam scores.
+</p>
+</div>
+</div>
+
+<div
+id="studentResultList"
+class="student-result-list"
+></div>
+</section>
+
+<!-- =====================================================
+RESULT DETAIL
+====================================================== -->
+<section
+id="resultDetail"
+class="result-detail-card card hidden"
+></section>
+
+</main>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

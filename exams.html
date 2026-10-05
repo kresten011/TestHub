@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TestHub - Exams</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+
+    <div class="sidebar-brand">
+      <div class="brand-mark">T</div>
+      <span>Test<span class="brand-blue">Hub</span></span>
+    </div>
+
+    <nav>
+      <a href="dashboard.html" class="nav-link">
+        <span>⌂</span>
+        Dashboard
+      </a>
+
+      <a href="exams.html" class="nav-link active">
+        <span>□</span>
+        Exams
+      </a>
+
+      <a href="results.html" class="nav-link">
+        <span>◇</span>
+        Results
+      </a>
+
+      <a href="profile.html" class="nav-link">
+        <span>•</span>
+        Profile
+      </a>
+    </nav>
+
+    <button class="logout-btn" data-logout>
+      <span>↪</span>
+      Log Out
+    </button>
+
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+
+      <div>
+        <span class="eyebrow">EXAM MANAGEMENT</span>
+
+        <h1 id="examPageTitle">Create Exam</h1>
+
+        <p class="page-subtitle">
+          Build an exam, add questions, and publish it for your students.
+        </p>
+      </div>
+
+      <div class="user-summary">
+
+        <span class="online-dot"></span>
+
+        <div>
+          <strong id="headerRole">Teacher</strong>
+          <small>Teacher account</small>
+        </div>
+
+        <img
+          id="topAvatar"
+          class="avatar"
+          src=""
+          alt="Profile"
+        >
+
+      </div>
+
+    </header>
+
+
+    <!-- TEACHER CREATE EXAM -->
+
+    <section
+      id="teacherExamSection"
+      class="card create-exam-card"
+    >
+
+      <div class="section-heading">
+
+        <div>
+          <span class="eyebrow">NEW EXAM</span>
+          <h2>Create an Exam</h2>
+        </div>
+
+        <span class="role-pill">Teacher</span>
+
+      </div>
+
+
+      <form id="examForm">
+
+        <div class="exam-details-grid">
+
+          <div class="input-block">
+            <label for="examTitle">
+              Title / Category
+            </label>
+
+            <input
+              id="examTitle"
+              required
+              placeholder="e.g. Mathematics Quiz"
+            >
+          </div>
+
+
+          <div class="input-block">
+            <label for="examId">
+              Exam ID
+            </label>
+
+            <input
+              id="examId"
+              required
+              placeholder="e.g. MATH101"
+            >
+          </div>
+
+
+          <div class="input-block">
+            <label for="examDeadline">
+              Deadline
+            </label>
+
+            <input
+              id="examDeadline"
+              type="datetime-local"
+              required
+            >
+          </div>
+
+
+          <div class="input-block">
+            <label for="examDuration">
+              Duration (minutes)
+            </label>
+
+            <input
+              id="examDuration"
+              type="number"
+              min="1"
+              value="60"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <div class="questions-section">
+
+          <div class="questions-title">
+
+            <div>
+              <span class="eyebrow">QUESTIONS</span>
+
+              <h2>Build Your Questions</h2>
+
+              <p class="muted">
+                Choose a question type and enter the question below.
+              </p>
+            </div>
+
+            <span
+              class="question-count"
+              id="questionCount"
+            >
+              1 Question
+            </span>
+
+          </div>
+
+
+          <div id="questionList"></div>
+
+
+          <button
+            type="button"
+            class="add-question-wide"
+            id="addQuestion"
+          >
+
+            <span class="plus-circle">+</span>
+
+            <span>
+              <strong>Add More Questions</strong>
+              <small>Click to add another question</small>
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <div class="publish-bar">
+
+          <div>
+            <strong>Ready to publish?</strong>
+
+            <p class="muted">
+              Students will be able to use the Exam ID after publishing.
+            </p>
+          </div>
+
+          <button
+            class="btn primary publish-btn"
+            type="submit"
+          >
+            Publish Exam
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </form>
+
+
+      <p
+        id="examMessage"
+        class="message"
+      ></p>
+
+    </section>
+
+
+    <!-- STUDENT TAKE EXAM -->
+
+    <section
+      id="studentExamSection"
+      class="card hidden"
+    >
+
+      <div class="section-heading">
+
+        <div>
+          <span class="eyebrow">STUDENT EXAMS</span>
+          <h2>Take an Exam</h2>
+        </div>
+
+      </div>
+
+
+      <form
+        id="takeExamForm"
+        class="inline-form"
+      >
+
+        <input
+          id="takeExamId"
+          placeholder="Enter Exam ID"
+          required
+        >
+
+        <button
+          class="btn primary"
+          type="submit"
+        >
+          Start Taking Exam
+        </button>
+
+      </form>
+
+
+      <p
+        id="takeMessage"
+        class="message"
+      ></p>
+
+    </section>
+
+
+    <!-- EXAM LIBRARY -->
+
+    <section class="card">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="eyebrow">EXAM LIBRARY</span>
+
+          <h2 id="examListTitle">
+            Created Exams
+          </h2>
+        </div>
+
+      </div>
+
+      <div id="examList"></div>
+
+    </section>
+
+
+    <!-- TAKING EXAM -->
+
+    <section
+      id="takingSection"
+      class="card hidden"
+    >
+
+      <div class="exam-header">
+
+        <div>
+          <h2 id="takingTitle"></h2>
+          <p
+            id="takingMeta"
+            class="muted"
+          ></p>
+        </div>
+
+        <div
+          class="timer"
+          id="examTimer"
+        >
+          00:00
+        </div>
+
+      </div>
+
+
+      <form id="takingForm">
+
+        <div id="takingQuestions"></div>
+
+        <button
+          class="btn primary"
+          type="submit"
+        >
+          Submit Exam
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
